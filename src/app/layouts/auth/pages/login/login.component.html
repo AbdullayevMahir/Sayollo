@@ -1,0 +1,18 @@
+<div class="login">
+  <div class="login__logo">
+    <p>Login</p>
+  </div>
+  <div class="login__content">
+    <div class="input-wrapper">
+      <label>Email</label>
+      <input [(ngModel)]="email" placeholder="email">
+    </div>
+    <div class="input-wrapper">
+      <label>Password</label>
+      <input [(ngModel)]="password" placeholder="password" type="password">
+    </div>
+    <p *ngIf="authError" class="error">{{authError}}</p>
+    <app-base-button (click)="login()">Login</app-base-button>
+  </div>
+
+</div>

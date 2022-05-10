@@ -1,0 +1,52 @@
+<div class="checkout">
+  <div class="checkout__header">
+    <p>Checkout</p>
+  </div>
+  <div class="checkout__content">
+    <form [formGroup]="checkoutForm" >
+      <div class="input-wrapper">
+        <label>Email</label>
+        <input formControlName="email" placeholder="email">
+        <span class="error" *ngIf="submitted && checkoutForm.get('email')?.invalid && (checkoutForm.get('email')?.dirty || checkoutForm?.get('email')?.touched)">
+          Please provide a valid email address.
+        </span>
+      </div>
+      <div class="input-wrapper">
+        <label>Full Name</label>
+        <input formControlName="fullname" placeholder="fullname" type="text">
+        <span class="error" *ngIf="submitted && checkoutForm.get('fullname')?.invalid && (checkoutForm.get('fullname')?.dirty || checkoutForm?.get('fullname')?.touched)">
+          Please provide a full name.
+        </span>
+      </div>
+      <div class="input-wrapper">
+        <label>Address</label>
+        <input formControlName="address" placeholder="Address" type="text">
+        <span class="error" *ngIf="submitted && checkoutForm.get('address')?.invalid && (checkoutForm.get('address')?.dirty || checkoutForm?.get('address')?.touched)">
+          Please provide a valid address.
+        </span>
+      </div>
+      <div class="input-wrapper">
+        <label>Phone</label>
+        <input formControlName="phone" placeholder="Phone" type="text">
+        <span class="error" *ngIf="submitted && checkoutForm.get('phone')?.invalid && (checkoutForm.get('phone')?.dirty || checkoutForm?.get('phone')?.touched)">
+          Please provide a valid phone.
+        </span>
+      </div>
+      <div class="input-wrapper">
+        <label>Credit Card Number</label>
+        <input formControlName="card" placeholder="Credit Card Number" type="text">
+        <span class="error" *ngIf="submitted && checkoutForm.get('card')?.invalid && (checkoutForm.get('card')?.dirty || checkoutForm?.get('card')?.touched)">
+          Please provide a card number.
+        </span>
+      </div>
+      <div class="input-wrapper">
+        <label>Cvv</label>
+        <input formControlName="cvv" placeholder="" type="text">
+        <span class="error" *ngIf="submitted && checkoutForm.get('cvv')?.invalid && (checkoutForm.get('cvv')?.dirty || checkoutForm?.get('cvv')?.touched)">
+          Please provide a correct cvv.
+        </span>
+      </div>
+      <app-base-button (click)="submit()" >Pay {{totalPrice$ | async}}$</app-base-button>
+    </form>
+  </div>
+</div>

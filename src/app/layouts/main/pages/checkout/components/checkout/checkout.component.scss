@@ -1,0 +1,18 @@
+.checkout {
+  &__header p {
+    margin: 50px 0 24px 0;
+    font-size: 24px;
+  }
+
+  &__content {
+    form {
+      width: 100%;
+      margin: 0 auto;
+      max-width: 460px;
+    }
+  }
+
+}
+.error {
+  color: red;
+}

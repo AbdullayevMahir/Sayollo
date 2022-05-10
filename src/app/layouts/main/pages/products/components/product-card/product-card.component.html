@@ -1,0 +1,21 @@
+<div class="product-card">
+  <div class="product-card__image">
+    <img src="{{imageUrl}}">
+  </div>
+  <div class="product-card__text">
+    <span>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.
+    </span>
+  </div>
+  <div class="product-card__price">
+    <span>Price: <span>{{price}}$</span></span>
+  </div>
+  <div class="product-card__qty">
+    <span>Qty:</span>
+    <span (click)="decreaseCount()" [ngClass]="{disabledBtn: qty === 1}"
+          class="product-card__qty__circle_button">-</span>
+    <span class="product-card__qty__count"> {{qty}} </span>
+    <span (click)="increaseCount()" class="product-card__qty__circle_button">+</span>
+  </div>
+  <app-base-button (click)="addToBasket()" class="product-card__button">Add To Cart</app-base-button>
+</div>

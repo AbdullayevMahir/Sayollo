@@ -1,0 +1,16 @@
+<div class="checkout-confirm">
+  <div class="checkout-confirm__header">
+    <p>Checkout</p>
+  </div>
+  <div class="checkout-confirm__content">
+    <p>Personal information</p>
+    <div *ngIf="userFormData" class="checkout-confirm__content__info">
+      <p>{{userFormData?.fullname}}</p>
+      <p>{{userFormData?.address}}</p>
+      <p>{{userFormData?.phone}}</p>
+      <p>{{userFormData?.card}}</p>
+      <p>{{userFormData?.cvv}}</p>
+    </div>
+    <app-base-button (click)="submit()" >Pay {{totalPrice$ | async}}$</app-base-button>
+  </div>
+</div>

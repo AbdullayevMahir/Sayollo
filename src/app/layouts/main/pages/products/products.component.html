@@ -1,0 +1,16 @@
+<div class="products">
+  <div class="products__header">
+    <p>Products</p>
+  </div>
+  <div class="products__content">
+    <div *ngIf="products$ | async as products" class="products__content__item">
+      <app-product-card *ngFor="let product of products"
+                        [id]="product.id"
+                        [price]="product.price"
+                        [imageUrl]="product.image"
+                        [text]="product.text"
+                        (onAddToBasket)="addToBasket($event)"
+      ></app-product-card>
+    </div>
+  </div>
+</div>
